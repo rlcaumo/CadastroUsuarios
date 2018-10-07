@@ -1,0 +1,64 @@
+﻿@using WEBAPI_Usuarios.Controllers
+@using WEBAPI_Usuarios.ViewModels
+@model UsuarioCreationDto
+@{
+    ViewBag.Title = "Cadastro - Usuarios";
+}
+@section scripts {
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Cadastro de usuário</legend>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Nome, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.Nome, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Nome)
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Sobrenome, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.Sobrenome, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Sobrenome)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Email, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.Email, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Email)
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Telefone, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.Telefone, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Telefone)
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Endereco, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.Endereco, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Endereco)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" class="btn btn-default" value="OK" />
+            </div>
+        </div>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Voltar", "Index")
+</div>
