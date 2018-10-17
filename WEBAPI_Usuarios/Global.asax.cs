@@ -19,7 +19,7 @@ namespace WEBAPI_Usuarios
             GlobalConfiguration.Configuration.Formatters
                 .Remove(GlobalConfiguration.Configuration.Formatters.XmlFormatter);
 
-            System.Data.Entity.Database.SetInitializer(new WEBAPI_ContextInitializer());
+            //System.Data.Entity.Database.SetInitializer(new WEBAPI_ContextInitializer());
 
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);

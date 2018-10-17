@@ -18,10 +18,7 @@
                 </button>
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Incluir usuário", "Cadastro", "UIUsuarios", new { area = "" }, null)</li>
-                    <li>@Html.ActionLink("Consultar usuário", "Index", "UIUsuarios", new { area = "" }, null)</li>
-                </ul>
+                <ul class="nav navbar-nav"></ul>
             </div>
         </div>
     </div>
@@ -35,6 +32,8 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/Scripts/knockout-3.4.2.js")
+    @Scripts.Render("~/Scripts/app.js")
     @RenderSection("scripts", required: false)
 </body>
 </html>

@@ -9,9 +9,25 @@ namespace WEBAPI_Usuarios.Controllers
     public class UIUsuariosController : Controller
     {
         // GET: UIUsuarios
-        public ActionResult Cadastro()
+        public ActionResult Index()
         {
             return View();
         }
+
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        public ActionResult Edit()
+        {
+            return View();
+        }
+
+        public ActionResult Delete()
+        {
+            return View();
+        }
+
     }
 }

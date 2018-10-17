@@ -19,11 +19,13 @@ namespace WEBAPI_Usuarios.Controllers
         }
 
         [Route("api/usuarios")]
+        //public IEnumerable<UsuarioDto> GetUsuarios()
         public HttpResponseMessage GetUsuarios()
         {
             var usuariosEntities = _usuarioRepository.GetUsuarios();
             var results = AutoMapper.Mapper.Map<IEnumerable<UsuarioDto>>(usuariosEntities);
             return Request.CreateResponse(results);
+            //return results;
         }
 
         [Route("api/usuarios/{usuarioId}")]

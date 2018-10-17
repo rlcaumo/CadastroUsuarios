@@ -1,1 +1,47 @@
 ﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Lista de Usuários</h2>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Usuário Id
+        </th>
+        <th>
+            Nome
+        </th>
+        <th>
+            Sobrenome
+        </th>
+        <th>
+            Email
+        </th>
+        <th>
+            Telefone
+        </th>
+        <th>
+            Endereço
+        </th>
+        <th></th>
+    </tr>
+    <tbody data-bind="foreach: usuarios">
+        <tr>
+            <td data-bind="text: id"></td>
+            <td data-bind="text: nome"></td>
+            <td data-bind="text: sobrenome"></td>
+            <td data-bind="text: email"></td>
+            <td data-bind="text: detalhe ? detalhe.telefone : ''"></td>
+            <td data-bind="text: detalhe ? detalhe.endereco : ''"></td>
+            <td>
+            <a data-bind="attr: { 'href': '@Url.Action("Edit", "UIUsuarios")/' + id }" class="btn-link">Edit</a>
+            <a data-bind="attr: { 'href': '@Url.Action("Delete", "UIUsuarios")/' + id }" class="btn-link">Delete</a>
+        </td>
+        </tr>
+    </tbody>
+</table>
